@@ -1,0 +1,26 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/fastfood_apk
+    username: postgres
+    password: 9802
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  application:
+    name: CURIERMOBILE
+
+  mvc:
+    servlet:
+      path: /api/curierMobile
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+

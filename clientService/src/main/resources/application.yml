@@ -1,0 +1,26 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/fastfood_apk
+    username: postgres
+    password: 9802
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  application:
+    name: CLIENTSERVICE
+
+  mvc:
+    servlet:
+      path: /api/clientservice
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+

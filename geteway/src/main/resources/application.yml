@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: adminService
+          uri: lb://ADMINSERVICE
+          predicates:
+            - Path=/api/admin/**
+        - id: clientMobile
+          uri: lb://CLIENTMOBILE
+          predicates:
+            - Path=/api/clientMobile/**
+        - id: clientService
+          uri: lb://CLIENTSERVICE
+          predicates:
+            - Path=/api/clientservice/**
+        - id: security
+          uri: lb://AUTH
+          predicates:
+            - Path=/auth/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
